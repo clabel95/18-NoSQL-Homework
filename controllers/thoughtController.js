@@ -1,4 +1,4 @@
-const { Thought, Users } = require("../models");
+const { Thought, User } = require("../models");
 
 module.exports = {
     // Get all thoughts
@@ -63,7 +63,7 @@ module.exports = {
 
    // Remove reaction from a user
    removeReaction(req, res) {
-    Users.findOneAndUpdate(
+    User.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
@@ -82,7 +82,7 @@ module.exports = {
   createThought(req, res) {
     console.log('You are adding an thought');
     console.log(req.body);
-    Users.findOneAndUpdate(
+    User.findOneAndUpdate(
       { _id: req.params.userId },
       { $addToSet: { thoughts: req.body } },
       { runValidators: true, new: true }

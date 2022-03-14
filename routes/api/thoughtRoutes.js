@@ -8,11 +8,11 @@ const {
     createReaction,
     removeReaction,
     createThought
-} = require('../../controllers/thoughts-controller')
+} = require('../../controllers/thoughtController')
 
 
 router.route('/').get(getAllThoughts)
-router.route('/:id').get(getThought).delete(deleteThought).put(updateThought)
+router.route('/:thoughtId').get(getThought).delete(deleteThought).put(updateThought)
 router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction)
 router.route('/:thoughtId/reactions').post(createReaction)
 router.route('/:userId').post(createThought)

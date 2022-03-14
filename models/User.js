@@ -12,11 +12,7 @@ const userSchema = new Schema(
         type: String,
         required: true,
         unique: true,
-        validate(value) {
-          if (!validator.isEmail(value)) {
-            throw new Error("Email is invaild");
-          }
-        },
+        validate: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
       },
       thoughts: [
         {
