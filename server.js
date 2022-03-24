@@ -1,3 +1,5 @@
+//This file was coppied from activity #26 in chapter 18
+
 const express = require('express');
 const db = require('./config/connection');
 const routes = require('./routes');

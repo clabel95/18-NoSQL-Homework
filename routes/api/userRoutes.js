@@ -1,5 +1,6 @@
 const router = require("express").Router();
-
+//here I am defining all the functions that I made in my controllers for the user and friend
+ 
 const {
   getUsers,
   getSingleUser,
